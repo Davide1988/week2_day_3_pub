@@ -8,15 +8,15 @@ require_relative("../customer")
 class PubTest < MiniTest::Test
 
 def setup
-  @drink_1 = Drink.new("Merlot",5)
-  @drink_2 = Drink.new("Corona",3)
+  @drink_1 = Drink.new("Merlot", 5, 10)
+  @drink_2 = Drink.new("Corona", 3, 2)
 
   @drinks = [@drink_1, @drink_2]
 
   @pub = Pub.new("Red Lion", 0 ,@drinks)
 
-  @customer_1 = Customer.new("Nadia", 100)
-  @customer_2 = Customer.new("Davide", 1)
+  @customer_1 = Customer.new("Nadia", 100, 21, 9)
+  @customer_2 = Customer.new("Davide", 10, 17, 0)
 
 end
 
@@ -64,10 +64,10 @@ def test_customer_buy_drink
   assert_equal(5, @pub.till)
 end
 
-def test_customer_buy_drink
-  @pub.customer_buy_drink(@drink_1,@customer_2)
-  assert_equal(0, @pub.till)
-end
+# def test_customer_buy_drink
+#   @pub.customer_buy_drink(@drink_1,@customer_2)
+#   assert_equal(0, @pub.till)
+# end
 
 # def test_customer_can_really_buy_drink
 #

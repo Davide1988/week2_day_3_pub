@@ -9,8 +9,8 @@ class CustomerTest < MiniTest::Test
   def setup
     @drink_1 = Drink.new("Merlot",5)
 
-    @customer_1 = Customer.new("Nadia", 100)
-    @customer_2 = Customer.new("Davide", 1)
+    @customer_1 = Customer.new("Nadia", 100, 21)
+    @customer_2 = Customer.new("Davide", 10, 17)
   end
 
   def test_get_customer_name
