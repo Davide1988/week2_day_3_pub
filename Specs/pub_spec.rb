@@ -13,7 +13,7 @@ def setup
 
   @drinks = [@drink_1, @drink_2]
 
-  @pub = Pub.new("Red Lion",[],@drinks)
+  @pub = Pub.new("Red Lion", 0 ,@drinks)
 
   @customer_1 = Customer.new("Nadia", 100)
   @customer_2 = Customer.new("Davide", 1)
@@ -62,6 +62,11 @@ end
 def test_customer_buy_drink
   @pub.customer_buy_drink(@drink_1,@customer_1)
   assert_equal(5, @pub.till)
+end
+
+def test_customer_buy_drink
+  @pub.customer_buy_drink(@drink_1,@customer_2)
+  assert_equal(0, @pub.till)
 end
 
 # def test_customer_can_really_buy_drink
